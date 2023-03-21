@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+    <h1>Flight List</h1>
+    <table>
+        <thead>
+            <tr>
+
+                <th>Airline</th>
+                <th>Airport</th>
+                <th>FlightNo</th>
+                <th>Departs</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Write the line of EJS to iterate over movies using forEach -->
+            <% flights.forEach(m=> { %>
+                <tr>
+                    <td>
+                        <%= m.airline %>
+                    </td>
+                    <td>
+                        <%= m.airport %>
+                    </td>
+                    <td>
+                        <%= m.flightNo %>
+                    </td>
+                    <td>
+
+                        <%= m.departs %>
+
+                    </td>
+                    <td><a href="/flights/<%= m._id %>">DETAILS</a></td>
+                </tr>
+                <!-- Close the forEach using EJS here -->
+                <% }) %>
+        </tbody>
+    </table>
+    </body>
+
+    </html>
